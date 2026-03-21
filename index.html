@@ -22,6 +22,9 @@
             scroll-behavior: smooth;
             margin: 0;
             padding: 0;
+            /* Protect layout and text */
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         /* Narrative font - Smaller Typewriter Style */
@@ -113,6 +116,16 @@
             z-index: -1;
             filter: contrast(1.08) brightness(1.05);
             transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            /* Prevent image selection/dragging */
+            pointer-events: none;
+        }
+
+        /* This layer acts as a guard/shield over the image */
+        .image-shield {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            cursor: default;
         }
 
         .floating-lyrics {
@@ -129,6 +142,7 @@
             inset: 0;
             background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.5) 150%);
             z-index: 1;
+            pointer-events: none;
         }
 
         .reveal {
@@ -143,11 +157,12 @@
         ::-webkit-scrollbar { width: 0px; }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;"> <!-- Global right-click disable -->
     <div class="grain"></div>
 
     <!-- 01: TITLE -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850656/gloom-33_jc9kfj.jpg" class="bg-image" alt="">
         <div class="vignette"></div>
         <div class="floating-lyrics text-center">
@@ -166,6 +181,7 @@
 
     <!-- 02 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850655/gloom-32_nk06l1.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm md:text-base">
@@ -176,6 +192,7 @@
 
     <!-- 03 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850653/gloom-31_wccnmg.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
             <p class="radiohead-text text-sm md:text-base">
@@ -186,6 +203,7 @@
 
     <!-- 04 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850652/gloom-30_je4a6c.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm md:text-base font-bold">
@@ -196,6 +214,7 @@
 
     <!-- 05 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850651/gloom-29_sztlbf.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
             <p class="radiohead-text text-sm italic">
@@ -206,6 +225,7 @@
 
     <!-- 06 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850650/gloom-28_xi8apz.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm pl-20">
@@ -216,6 +236,7 @@
 
     <!-- 07 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850649/gloom-27_hfk6gv.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
             <p class="radiohead-text text-sm">
@@ -226,6 +247,7 @@
 
     <!-- 08 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850647/gloom-26_zzcatb.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm">
@@ -236,6 +258,7 @@
 
     <!-- 09 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850642/gloom-23_kbsdpn.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
             <p class="radiohead-text text-sm italic">
@@ -246,6 +269,7 @@
 
     <!-- 10 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850637/gloom-19_l9y79t.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm pl-10">
@@ -256,6 +280,7 @@
 
     <!-- 11 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850636/gloom-17_n3pze8.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm">
@@ -266,6 +291,7 @@
 
     <!-- 12 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850636/gloom-18_kml15l.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
             <p class="radiohead-text text-sm">
@@ -276,6 +302,7 @@
 
     <!-- 13 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850634/gloom-16_pottno.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-xs md:text-sm opacity-80">
@@ -286,6 +313,7 @@
 
     <!-- 14 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850631/gloom-14_m3sua8.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
             <p class="radiohead-text text-2xl font-extrabold">
@@ -296,6 +324,7 @@
 
     <!-- 15 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850629/gloom-12_yfzy2g.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-xs opacity-70">
@@ -306,6 +335,7 @@
 
     <!-- 16 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850627/gloom-10_pml6tj.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
             <p class="radiohead-text text-sm italic">
@@ -316,6 +346,7 @@
 
     <!-- 17 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850625/gloom-09_igsmnt.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm font-light">
@@ -326,6 +357,7 @@
 
     <!-- 18 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850624/gloom-08_yd60df.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
             <p class="radiohead-text text-sm italic opacity-60">
@@ -336,6 +368,7 @@
 
     <!-- 19 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850622/gloom-07_cux8rn.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm">
@@ -346,6 +379,7 @@
 
     <!-- 20 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850621/gloom-06_ulu5ld.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
             <p class="radiohead-text text-xs opacity-80">
@@ -356,6 +390,7 @@
 
     <!-- 21 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850620/gloom-05_t9hleg.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm italic">
@@ -366,6 +401,7 @@
 
     <!-- 22 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850619/gloom-03_eohzym.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
             <p class="radiohead-text text-3xl font-extrabold opacity-40">
@@ -376,6 +412,7 @@
 
     <!-- 23 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850618/gloom-02_dbtlii.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
             <p class="radiohead-text text-sm">
@@ -386,6 +423,7 @@
 
     <!-- 24 -->
     <section class="reveal">
+        <div class="image-shield"></div>
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850618/gloom-01_u1nq2c.jpg" class="bg-image" alt="">
         <div class="vignette"></div>
         <div class="floating-lyrics text-center">
@@ -394,7 +432,7 @@
             </h2>
             <div class="w-12 h-[1px] bg-white mx-auto opacity-30"></div>
             <p class="mt-8 text-[9px] uppercase tracking-[1em] opacity-40 font-bold font-sans">
-                <span class="text-box">Gloom by &bull; Yevgeniy Babichenko</span>
+                <span class="text-box">Gloom Photography &bull; Yevgeniy Babichenko</span>
             </p>
         </div>
     </section>
@@ -427,6 +465,11 @@
                     img.style.transform = `scale(1.1) translateY(${shift}px)`;
                 }
             });
+        });
+
+        // Prevention of dragging
+        document.addEventListener('dragstart', (e) => {
+            if (e.target.tagName === 'IMG') e.preventDefault();
         });
     </script>
 </body>
