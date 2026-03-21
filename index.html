@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gloom | Photography Project</title>
+    <title>Gloom | A Visual Essay by Yevgeniy Babichenko</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,9 +27,9 @@
         /* Narrative font - Smaller Typewriter Style */
         .radiohead-text {
             font-family: 'Special Elite', system-ui;
-            filter: blur(3px);
+            filter: blur(6px); 
             opacity: 0;
-            transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 2.2s cubic-bezier(0.16, 1, 0.3, 1);
             letter-spacing: 0.02em;
         }
 
@@ -38,10 +38,37 @@
             opacity: 1;
         }
 
-        /* Title specific font */
+        /* Title specific font with a persistent soft blur */
         .title-font {
             font-family: 'Syncopate', sans-serif;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.3em;
+            filter: blur(1.5px); 
+            transition: filter 2s ease-out;
+            position: relative;
+        }
+        
+        .visible .title-font {
+            filter: blur(0.8px);
+        }
+
+        /* Flare effect behind the title */
+        .title-flare {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+            filter: blur(30px);
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+        }
+
+        .visible .title-flare {
+            opacity: 1;
         }
 
         /* Gradient background with softer edges and backdrop blur */
@@ -119,21 +146,25 @@
 <body>
     <div class="grain"></div>
 
+    <!-- 01: TITLE -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850656/gloom-33_jc9kfj.jpg" class="bg-image" alt="">
         <div class="vignette"></div>
         <div class="floating-lyrics text-center">
             <div class="radiohead-text inline-block">
                 <h1 class="text-4xl md:text-7xl font-bold title-font">
+                    <div class="title-flare"></div>
                     <span class="text-box uppercase px-12 py-6">GLOOM</span>
                 </h1>
-                <p class="mt-6 uppercase tracking-[0.6em] text-[9px] opacity-50 font-sans">
-                    <span class="text-box">Frequency / Displacement / Static</span>
+                
+                <p class="mt-12 text-xs opacity-50 font-sans">
+                    <span class="text-box py-1">A Visual Essay by Yevgeniy Babichenko</span>
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- 02 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850655/gloom-32_nk06l1.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -143,6 +174,7 @@
         </div>
     </section>
 
+    <!-- 03 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850653/gloom-31_wccnmg.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
@@ -152,6 +184,7 @@
         </div>
     </section>
 
+    <!-- 04 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850652/gloom-30_je4a6c.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -161,6 +194,7 @@
         </div>
     </section>
 
+    <!-- 05 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850651/gloom-29_sztlbf.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
@@ -170,6 +204,7 @@
         </div>
     </section>
 
+    <!-- 06 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850650/gloom-28_xi8apz.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -179,6 +214,7 @@
         </div>
     </section>
 
+    <!-- 07 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850649/gloom-27_hfk6gv.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
@@ -188,6 +224,7 @@
         </div>
     </section>
 
+    <!-- 08 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850647/gloom-26_zzcatb.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -197,6 +234,7 @@
         </div>
     </section>
 
+    <!-- 09 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850642/gloom-23_kbsdpn.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
@@ -206,6 +244,7 @@
         </div>
     </section>
 
+    <!-- 10 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850637/gloom-19_l9y79t.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -215,6 +254,7 @@
         </div>
     </section>
 
+    <!-- 11 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850636/gloom-17_n3pze8.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -224,6 +264,7 @@
         </div>
     </section>
 
+    <!-- 12 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850636/gloom-18_kml15l.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
@@ -233,6 +274,7 @@
         </div>
     </section>
 
+    <!-- 13 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850634/gloom-16_pottno.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -242,6 +284,7 @@
         </div>
     </section>
 
+    <!-- 14 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850631/gloom-14_m3sua8.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
@@ -251,6 +294,7 @@
         </div>
     </section>
 
+    <!-- 15 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850629/gloom-12_yfzy2g.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -260,6 +304,7 @@
         </div>
     </section>
 
+    <!-- 16 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850627/gloom-10_pml6tj.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
@@ -269,6 +314,7 @@
         </div>
     </section>
 
+    <!-- 17 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850625/gloom-09_igsmnt.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -278,6 +324,7 @@
         </div>
     </section>
 
+    <!-- 18 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850624/gloom-08_yd60df.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
@@ -287,6 +334,7 @@
         </div>
     </section>
 
+    <!-- 19 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850622/gloom-07_cux8rn.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -296,6 +344,7 @@
         </div>
     </section>
 
+    <!-- 20 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850621/gloom-06_ulu5ld.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-right">
@@ -305,6 +354,7 @@
         </div>
     </section>
 
+    <!-- 21 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850620/gloom-05_t9hleg.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -314,6 +364,7 @@
         </div>
     </section>
 
+    <!-- 22 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850619/gloom-03_eohzym.jpg" class="bg-image" alt="">
         <div class="floating-lyrics text-center">
@@ -323,6 +374,7 @@
         </div>
     </section>
 
+    <!-- 23 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850618/gloom-02_dbtlii.jpg" class="bg-image" alt="">
         <div class="floating-lyrics">
@@ -332,6 +384,7 @@
         </div>
     </section>
 
+    <!-- 24 -->
     <section class="reveal">
         <img src="https://res.cloudinary.com/dytzcf9mr/image/upload/v1773850618/gloom-01_u1nq2c.jpg" class="bg-image" alt="">
         <div class="vignette"></div>
@@ -341,13 +394,12 @@
             </h2>
             <div class="w-12 h-[1px] bg-white mx-auto opacity-30"></div>
             <p class="mt-8 text-[9px] uppercase tracking-[1em] opacity-40 font-bold font-sans">
-                <span class="text-box">Gloom Photography &bull; 2026</span>
+                <span class="text-box">Gloom by &bull; Yevgeniy Babichenko</span>
             </p>
         </div>
     </section>
 
     <script>
-        // Use Intersection Observer to reveal sections on scroll
         const observerOptions = {
             threshold: 0.25
         };
@@ -364,7 +416,7 @@
             observer.observe(el);
         });
 
-        // Smooth Parallax movement for background images
+        // Smooth Parallax movement
         window.addEventListener('scroll', () => {
             const images = document.querySelectorAll('.bg-image');
             images.forEach((img) => {
@@ -379,5 +431,4 @@
     </script>
 </body>
 </html>
-
 
